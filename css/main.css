@@ -1,0 +1,117 @@
+:root {
+    /* Colores */
+    --dark-purple: #210124ff;
+    --claret: #750d37ff;
+    --turquoise-green: #b3dec1ff;
+    --light-cyan: #dbf9f0ff;
+    --baby-powder: #f7f9f7ff;
+    /* Size */
+    --width-container: 40rem;
+    --font-size__l: 2.5rem;
+    --font-size__m: 1.2rem;
+    /* Fonts */
+    --font-regular: 'Roboto Flex', sans-serif;
+    /* Breakpoint */
+    --breakpoint__s: 40rem; /* por el container */
+}
+
+/* Animaciones */
+@keyframes aniSalto {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Fin animaciones */
+
+/* Generales */
+
+body {
+    font-family: var(--font-regular);
+    font-weight: lighter;
+    background-color: var(--baby-powder);
+    margin: 0;
+    font-size: var(--font-size__m);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+.container {
+    max-width: var(--width-container);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Fin generales */
+
+/* Landing */
+
+.landing__title {
+    text-align: center;
+    color: var(--claret);
+    line-height: 3rem; /* Interlineado */
+    font-size: var(--font-size__l);
+}
+
+.landing__title--black {
+    color: var(--dark-purple);
+}
+
+/* Fin landing */
+
+/* Nav */
+
+.landing__ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 4rem;
+    list-style: none;
+}
+
+.landing__link {
+    display: block;
+    max-width: 8rem;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+.landing__link:hover {
+    animation-name: aniSalto;
+}
+
+.landing__img {
+    border-radius: 50%;
+    border: 3px solid var(--claret);
+    padding: 3px;
+}
+
+.landing__text {
+    display: block;
+    text-align: center;
+    margin-top: .8rem;
+}
+
+@media screen and (max-width: 40rem) { /* de 40rem hacia abajo, no usar variables aquí */
+    .landing__ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .landing__link {
+        max-width: 12rem;
+    }
+}
